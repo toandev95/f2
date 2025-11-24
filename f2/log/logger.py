@@ -170,7 +170,7 @@ def log_setup(
     log_manager.setup_logging(
         level=logging.INFO,
         log_to_console=log_to_console,
-        log_path=log_dir,
+        log_path=None,
     )
 
     # 保留200个日志和堆栈文件
