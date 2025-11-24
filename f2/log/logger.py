@@ -162,8 +162,8 @@ def log_setup(
         return logger
 
     # 创建日志目录
-    log_dir = Path("./logs")
-    log_dir.mkdir(exist_ok=True)
+    # log_dir = Path("./logs")
+    # log_dir.mkdir(exist_ok=True)
 
     # 初始化日志管理器
     log_manager = LogManager(log_name)
