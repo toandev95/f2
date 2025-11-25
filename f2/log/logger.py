@@ -85,6 +85,8 @@ class LogManager(metaclass=Singleton):
             )
             ch.setFormatter(logging.Formatter("{message}", style="{", datefmt="[%X]"))
             self.logger.addHandler(ch)
+        else:
+            self.logger.disabled = True
 
         # 文件日志输出
         if log_path:

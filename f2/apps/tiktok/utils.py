@@ -10,6 +10,7 @@ import traceback
 from typing import Union
 from pathlib import Path
 
+from f2.apps.tiktok.algorithm.xgnarly_generator import XGnarlyGenerator
 from f2.i18n.translator import _
 from f2.log.logger import logger, trace_logger
 from f2.utils.xbogus import XBogus as XB
@@ -471,6 +472,14 @@ class XBogusManager:
         separator = "&" if "?" in base_endpoint else "?"
 
         final_endpoint = f"{base_endpoint}{separator}{param_str}&X-Bogus={xb_value[1]}"
+
+        try:
+            xgnarly_value = XGnarlyGenerator(user_agent).generate(
+                query_string=param_str, user_agent=user_agent
+            )
+            final_endpoint = f"{final_endpoint}&X-Gnarly={xgnarly_value}"
+        except Exception:
+            pass
 
         return final_endpoint
 
