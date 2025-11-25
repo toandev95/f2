@@ -180,7 +180,7 @@ def log_setup(
 
 
 # 主日志记录器（包含所有日志级别）
-logger = log_setup(log_to_console=True, log_name="f2")
+logger = log_setup(log_to_console=False, log_name="f2")
 
 # 错误堆栈日志记录器（不输出到控制台，单独记录错误日志）
 trace_logger = log_setup(log_to_console=False, log_name="f2-trace")
